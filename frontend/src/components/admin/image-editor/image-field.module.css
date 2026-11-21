@@ -1,0 +1,134 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  height: 100%;
+}
+
+.fileInput {
+  display: none;
+}
+
+/* The composed WebP carries its own neutral background, so `contain` on the same neutral field is seamless. */
+.panel {
+  position: relative;
+  flex: 1;
+  min-height: 240px;
+  overflow: hidden;
+  background: var(--color-image-empty-background, #e2e8f0);
+}
+
+.image {
+  object-fit: contain;
+}
+
+.dropzone {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 16px;
+  border: 0;
+  background: transparent;
+  color: #023047;
+  font: inherit;
+  text-align: center;
+  cursor: pointer;
+}
+
+.dropzone:hover:not(:disabled) {
+  background: rgb(2 48 71 / 6%);
+}
+
+.dropzone:focus-visible,
+.editButton:focus-visible {
+  outline: 3px solid #219ebc;
+  outline-offset: -3px;
+}
+
+.addIcon {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 6px;
+}
+
+.promptTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.promptHint {
+  color: #475569;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+
+/* Edit control from the Figma frames: 30px square at the panel's top-right corner. */
+.editButton {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid #023047;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.editButton:hover:not(:disabled) {
+  background: #f1f5f9;
+}
+
+.dropzone:disabled,
+.editButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px 12px;
+  padding: 0 4px 4px;
+  color: #475569;
+  font-size: 0.75rem;
+}
+
+.revert {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #023047;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.revert:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.error {
+  margin: 0 4px 4px;
+  padding: 8px 12px;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 0.8125rem;
+}

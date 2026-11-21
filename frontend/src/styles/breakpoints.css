@@ -1,0 +1,26 @@
+/* Shared desktop boundary for utilities, CSS Modules, and browser behavior. */
+@custom-variant desktop {
+  @media (min-width: 1280px) {
+    @slot;
+  }
+}
+
+:root {
+  --tablet-breakpoint: 600px;
+  --navigation-breakpoint: 1024px;
+  --desktop-breakpoint: 1280px;
+  --motion-desktop-breakpoint: 1280px;
+}
+
+/* Rich motion requires a desktop viewport and precise hover input. */
+@custom-variant motion-desktop (@media (width >= 1280px) and (hover: hover) and (pointer: fine));
+
+/* The full site navigation needs more room than the landing's desktop layout. */
+@custom-variant navigation (@media (width >= 1024px));
+
+/* Intermediate landing layouts; bounded (< 1280px) so @variant tablet never overrides @variant desktop. */
+@custom-variant tablet {
+  @media (min-width: 600px) and (width < 1280px) {
+    @slot;
+  }
+}

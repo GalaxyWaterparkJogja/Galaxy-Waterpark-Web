@@ -1,0 +1,161 @@
+@reference "../../../../../styles/breakpoints.css";
+
+.image {
+  object-fit: cover;
+  z-index: 0;
+}
+
+.section {
+  scroll-margin-top: var(--header-height, 64px);
+  width: var(--landing-content-width);
+  max-width: var(--landing-content-max);
+  margin: 24px auto 0;
+  padding-bottom: 28px;
+}
+
+.card {
+  min-height: 200px;
+  aspect-ratio: 16 / 9;
+  gap: 10px;
+  padding: 20px;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  background: #183f4f;
+  color: var(--color-surface-page);
+  text-decoration: none;
+}
+
+.picture {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  width: var(--artwork-mobile-width, 100%);
+  height: var(--artwork-mobile-height, 100%);
+  left: var(--artwork-mobile-left, 0);
+  top: var(--artwork-mobile-top, 0);
+}
+
+/* Photo frames preserve the crops from the mobile Figma reference. */
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.name,
+.arrow {
+  position: relative;
+  z-index: 2;
+}
+
+@variant motion-desktop {
+  .image,
+  .arrow {
+    transition: transform var(--motion-hover-duration) var(--motion-ease);
+  }
+  .card:is(:hover, :focus-visible) .image {
+    transform: scale(1.04);
+  }
+  .card:is(:hover, :focus-visible) .arrow {
+    transform: translateX(3px);
+  }
+}
+
+.name {
+  overflow-wrap: anywhere;
+  padding-left: 0;
+  font-size: var(--type-section-size, 20px);
+  font-weight: 700;
+  color: var(--color-surface-page);
+  line-height: var(--type-section-leading, 28px);
+  letter-spacing: -0.16px;
+}
+
+.arrow {
+  width: 36px;
+  height: 36px;
+}
+
+@variant desktop {
+  .picture {
+    width: var(--artwork-desktop-width, 100%);
+    height: var(--artwork-desktop-height, 100%);
+    left: var(--artwork-desktop-left, 0);
+    top: var(--artwork-desktop-top, 0);
+  }
+
+  .section {
+    width: calc(100% - 2 * var(--gutter));
+    max-width: calc(var(--container-max-width) - 2 * var(--gutter));
+    margin-inline: auto;
+    margin-top: var(--landing-section-space);
+    padding-bottom: 36px;
+  }
+
+  .card {
+    min-width: 0;
+    min-height: 0;
+    aspect-ratio: 412 / 714;
+    padding: 24px var(--artwork-card-inset, 22px)
+      var(--artwork-card-bottom, 21px);
+    gap: 20px;
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+  }
+
+  .overlay {
+    background: linear-gradient(
+      180deg,
+      rgb(59 100 120 / 22%) 54.808%,
+      rgb(0 0 0 / 40%) 75.962%
+    );
+  }
+
+  .name {
+    max-width: 100%;
+    padding-left: 0;
+    font-size: clamp(20px, 1.944vw, 28px);
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.2px;
+  }
+
+  .arrow {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@variant tablet {
+  .section {
+    width: var(--landing-content-width);
+    max-width: var(--landing-content-max);
+    margin: var(--landing-section-space) auto 0;
+  }
+  .card {
+    min-height: 0;
+    min-width: 0;
+    aspect-ratio: 3 / 4;
+    padding: 16px;
+    gap: 12px;
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+  }
+  .name {
+    padding: 0;
+    min-height: 56px;
+    font-size: var(--type-section-size);
+    line-height: var(--type-section-leading);
+    font-weight: 700;
+  }
+  .arrow {
+    width: 44px;
+    height: 44px;
+  }
+  .arrow img {
+    width: 36px;
+    height: 36px;
+  }
+}

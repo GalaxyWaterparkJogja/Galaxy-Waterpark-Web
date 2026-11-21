@@ -1,0 +1,507 @@
+{
+  "info": {
+    "_postman_id": "c1d6d5c1-6a0f-4b25-9f7d-4d8e3d0b3f01",
+    "name": "Galaxy Waterpark API",
+    "description": "Public API dan Admin API Galaxy Waterpark. Endpoint publik tidak memerlukan autentikasi; endpoint admin menggunakan Sanctum bearer token.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:8000",
+      "type": "string"
+    },
+    {
+      "key": "review_limit",
+      "value": "5",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Public API",
+      "description": "Endpoint publik untuk informasi waterpark. GET dibatasi 100 request per 15 menit per IP. Pengiriman review dibatasi 5 request per 15 menit per IP.",
+      "item": [
+        {
+          "name": "Get Homepage Data",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "Mengambil data gabungan untuk homepage: profil, tiket, wahana/fasilitas/hydrotherapy unggulan, galeri, promo, event, dan sponsor.",
+            "url": {
+              "raw": "{{base_url}}/public/home",
+              "host": ["{{base_url}}"],
+              "path": ["public", "home"]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test('Response contains homepage data', function () {",
+                  "    const json = pm.response.json();",
+                  "    pm.expect(json).to.have.property('success', true);",
+                  "    pm.expect(json.data).to.have.property('profile');",
+                  "    pm.expect(json.data.tickets).to.be.an('array');",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Company Profile",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "Mengambil profil perusahaan. Mengembalikan HTTP 404 jika data profil belum tersedia.",
+            "url": {
+              "raw": "{{base_url}}/public/profile",
+              "host": ["{{base_url}}"],
+              "path": ["public", "profile"]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200 or 404', function () {",
+                  "    pm.expect([200, 404]).to.include(pm.response.code);",
+                  "});",
+                  "pm.test('Response is JSON', function () {",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Ticket Prices",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "Mengambil daftar harga tiket yang diurutkan berdasarkan harga terendah.",
+            "url": {
+              "raw": "{{base_url}}/public/tickets",
+              "host": ["{{base_url}}"],
+              "path": ["public", "tickets"]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test('Response has success and data', function () {",
+                  "    const json = pm.response.json();",
+                  "    pm.expect(json).to.have.property('success', true);",
+                  "    pm.expect(json.data).to.be.an('array');",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Operating Schedule and Holidays",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "Mengambil jam operasional dan informasi hari libur. Mengembalikan HTTP 404 jika profil belum tersedia.",
+            "url": {
+              "raw": "{{base_url}}/public/schedule",
+              "host": ["{{base_url}}"],
+              "path": ["public", "schedule"]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200 or 404', function () {",
+                  "    pm.expect([200, 404]).to.include(pm.response.code);",
+                  "});",
+                  "pm.test('Response is JSON', function () {",
+                  "    pm.response.to.be.json;",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Attractions",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "Mengambil daftar wahana aktif beserta deskripsi, gambar, persyaratan tinggi, dan status unggulan.",
+            "url": {
+              "raw": "{{base_url}}/public/attractions",
+              "host": ["{{base_url}}"],
+              "path": ["public", "attractions"]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200 and data is an array', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "    const json = pm.response.json();",
+                  "    pm.expect(json).to.have.property('success', true);",
+                  "    pm.expect(json.data).to.be.an('array');",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Facilities",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "Mengambil daftar fasilitas aktif.",
+            "url": {
+              "raw": "{{base_url}}/public/facilities",
+              "host": ["{{base_url}}"],
+              "path": ["public", "facilities"]
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        {
+          "name": "Get Hydrotherapy Services",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "Mengambil daftar layanan hydrotherapy aktif beserta harga dan durasi.",
+            "url": {
+              "raw": "{{base_url}}/public/hydrotherapy",
+              "host": ["{{base_url}}"],
+              "path": ["public", "hydrotherapy"]
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        {
+          "name": "Get Gallery",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "Mengambil item galeri aktif.",
+            "url": {
+              "raw": "{{base_url}}/public/gallery",
+              "host": ["{{base_url}}"],
+              "path": ["public", "gallery"]
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        {
+          "name": "Get Promotions",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "Mengambil promo aktif yang masih berada dalam periode tanggalnya.",
+            "url": {
+              "raw": "{{base_url}}/public/promotions",
+              "host": ["{{base_url}}"],
+              "path": ["public", "promotions"]
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        {
+          "name": "Get Events",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "Mengambil event aktif yang belum berakhir.",
+            "url": {
+              "raw": "{{base_url}}/public/events",
+              "host": ["{{base_url}}"],
+              "path": ["public", "events"]
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        {
+          "name": "Get Sponsors",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "Mengambil daftar sponsor aktif.",
+            "url": {
+              "raw": "{{base_url}}/public/sponsors",
+              "host": ["{{base_url}}"],
+              "path": ["public", "sponsors"]
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        {
+          "name": "Get Approved Reviews",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "Mengambil review yang berstatus approved. Parameter limit default 5 dan dibatasi maksimum 20.",
+            "url": {
+              "raw": "{{base_url}}/public/reviews?limit={{review_limit}}",
+              "host": ["{{base_url}}"],
+              "path": ["public", "reviews"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "{{review_limit}}",
+                  "description": "Jumlah review, default 5, minimum efektif 5 untuk nilai kurang dari 1, maksimum 20."
+                }
+              ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test('Status code is 200', function () {",
+                      "    pm.response.to.have.status(200);",
+                      "});",
+                      "pm.test('Response has approved reviews data', function () {",
+                      "    const json = pm.response.json();",
+                      "    pm.expect(json).to.have.property('success', true);",
+                      "    pm.expect(json.data).to.be.an('array');",
+                      "    pm.expect(json.data.length).to.be.at.most(20);",
+                      "});"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Submit Visitor Review",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "description": "Mengirim ulasan baru untuk moderasi. Review baru berstatus pending dan tidak langsung tampil di daftar publik. Batas: 5 request per 15 menit per IP.",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reviewer_name\": \"Nama Pengunjung\",\n  \"rating\": 5,\n  \"comment_text\": \"Wahana dan fasilitasnya menyenangkan.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/public/reviews",
+                  "host": ["{{base_url}}"],
+                  "path": ["public", "reviews"]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test('Review is created and queued for moderation', function () {",
+                      "    pm.response.to.have.status(201);",
+                      "    const json = pm.response.json();",
+                      "    pm.expect(json).to.have.property('success', true);",
+                      "    pm.expect(json.data.status).to.eql('pending');",
+                      "});"
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+              "name": "Admin API",
+              "description": "Login menggunakan kredensial admin. Siapkan environment variables admin_email dan admin_password. Jalankan Login Admin terlebih dahulu untuk menyimpan admin_token.",
+              "item": [
+                {
+                  "name": "Login Admin",
+                  "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "description": "Login admin. Kredensial admin dibuat melalui perintah artisan admin:create. Login dibatasi 5 kali per 15 menit per kombinasi IP dan email. Token berlaku 8 jam.",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"{{admin_email}}\",\n  \"password\": \"{{admin_password}}\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/admin/login",
+                  "host": ["{{base_url}}"],
+                  "path": ["admin", "login"]
+                }
+                  },
+                  "response": [],
+                  "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test('Admin login succeeds', function () {",
+                      "    pm.response.to.have.status(200);",
+                      "    const json = pm.response.json();",
+                      "    pm.expect(json).to.have.property('success', true);",
+                      "    pm.expect(json.data.token_type).to.eql('Bearer');",
+                      "    pm.expect(json.data.admin).to.have.property('email');",
+                      "    pm.environment.set('admin_token', json.data.token);",
+                      "});"
+                    ]
+                  }
+                }
+                  ]
+                },
+                {
+                  "name": "Get Admin Dashboard Overview",
+                  "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "description": "Mengambil jumlah profil, tiket aktif, wahana, fasilitas, layanan hydrotherapy, galeri, promo, event, sponsor, ringkasan review, dan 10 review terbaru. Memerlukan token admin.",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{admin_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}/admin/dashboard",
+                  "host": ["{{base_url}}"],
+                  "path": ["admin", "dashboard"]
+                }
+                  },
+                  "response": [],
+                  "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test('Admin dashboard is returned', function () {",
+                      "    pm.response.to.have.status(200);",
+                      "    const json = pm.response.json();",
+                      "    pm.expect(json).to.have.property('success', true);",
+                      "    pm.expect(json.data.content).to.have.property('active_tickets');",
+                      "    pm.expect(json.data.reviews).to.have.property('pending');",
+                      "    pm.expect(json.data.reviews.recent).to.be.an('array');",
+                      "});"
+                    ]
+                  }
+                }
+                  ]
+                },
+                {
+                  "name": "Logout Admin",
+                  "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "description": "Mencabut token admin aktif. Setelah logout, jalankan Login Admin lagi sebelum meminta dashboard.",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{admin_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}/admin/logout",
+                  "host": ["{{base_url}}"],
+                  "path": ["admin", "logout"]
+                }
+                  },
+                  "response": [],
+                  "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test('Admin token is revoked', function () {",
+                      "    pm.response.to.have.status(200);",
+                      "    pm.environment.unset('admin_token');",
+                      "});"
+                    ]
+                  }
+                }
+                  ]
+                }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+.button {
+  position: fixed;
+  z-index: 40;
+  right: calc(var(--floating-action-right) + (var(--floating-action-size) - 48px) / 2);
+  bottom: calc(var(--floating-action-bottom) + var(--floating-action-size) + var(--floating-action-gap));
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 1px solid var(--color-border-brand);
+  border-radius: var(--radius-round);
+  background: var(--color-surface-brand);
+  color: var(--color-surface-page);
+  box-shadow: var(--shadow-card);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity var(--motion-fade-duration, 200ms) ease,
+    visibility var(--motion-fade-duration, 200ms) ease;
+  touch-action: manipulation;
+}
+.button[data-visible="true"] {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.button:focus-visible {
+  outline-color: var(--color-action-primary);
+}
+.button:hover {
+  background: var(--color-text-brand);
+}
+.arrow {
+  rotate: -90deg;
+}
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
+}

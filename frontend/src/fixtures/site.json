@@ -1,0 +1,53 @@
+{
+  "brand": {
+    "name": "Galaxy Waterpark",
+    "description": "Taman rekreasi air keluarga dengan standar kebersihan dan kualitas air terbaik, menghadirkan pengalaman bermain yang aman, segar, dan berkesan.",
+    "href": "/",
+    "home_label": "Galaxy Waterpark — Kembali ke beranda",
+    "logo": {
+      "src": "/images/figma/layout/brand-source.png",
+      "width": 1080,
+      "height": 889
+    }
+  },
+  "navigation": [
+    { "label": "Beranda", "href": "/", "pathname": "/" },
+    {
+      "label": "Wahana & Fasilitas",
+      "href": "/katalog",
+      "pathname": "/katalog"
+    },
+    { "label": "Promo", "href": "/promo", "pathname": "/promo" },
+    { "label": "Event", "href": "/event", "pathname": "/event" },
+    { "label": "Galeri", "href": "/galeri", "pathname": "/galeri" }
+  ],
+  "header": {
+    "navigation_label": "Navigasi utama",
+    "open_label": "Buka navigasi",
+    "close_label": "Tutup navigasi",
+    "menu_title": "Menu"
+  },
+  "footer": {
+    "navigation_label": "Navigasi footer",
+    "contacts_label": "Kontak dan media sosial",
+    "copyright": "© Copyright 2026. All rights reserved."
+  },
+  "contacts": {
+    "location": {
+      "label": "Gang Kresna 1 Baturetno Special Region of Yogyakarta",
+      "href": "/#location",
+      "accessible_label": "Lokasi Galaxy Waterpark di peta"
+    },
+    "instagram": {
+      "label": "@galaxywaterpark",
+      "href": "https://instagram.com/galaxywaterpark",
+      "accessible_label": "Instagram Galaxy Waterpark"
+    },
+    "whatsapp": {
+      "label": "+62 XXXXXXXXX",
+      "href": null,
+      "accessible_label": "Nomor WhatsApp belum tersedia"
+    }
+  },
+  "skip_label": "Lewati ke konten utama"
+}

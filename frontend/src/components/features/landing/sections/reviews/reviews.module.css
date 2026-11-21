@@ -1,0 +1,463 @@
+@reference "../../../../../styles/breakpoints.css";
+
+.section {
+  scroll-margin-top: var(--header-height, 64px);
+  margin-top: 34px;
+  padding-bottom: 28px;
+}
+.viewport {
+  --slide-spacing: 16px;
+  overflow: hidden;
+  touch-action: pan-y pinch-zoom;
+  padding-block: 12px 28px;
+  margin-block: -12px -16px;
+}
+.track {
+  display: flex;
+}
+.slide {
+  flex: 0 0 auto;
+  min-width: 0;
+  padding-inline: calc(var(--slide-spacing) / 2);
+  width: calc(100vw - 48px + var(--slide-spacing));
+  max-width: calc(600px + var(--slide-spacing));
+}
+.card {
+  position: relative;
+  min-height: 210px;
+  height: 100%;
+  background: var(--color-surface-page);
+  border: 1px solid var(--color-border-brand);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-content-card);
+  padding: 16px 18px 0;
+}
+.cardInteractive {
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease;
+}
+.cardInteractive:hover {
+  border-color: var(--color-surface-brand);
+  box-shadow: var(--shadow-card);
+}
+.cardInteractive:has(.readMore:focus-visible) {
+  outline: 2px solid var(--color-border-brand);
+  outline-offset: 2px;
+}
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 24px;
+  flex-shrink: 0;
+}
+.stars {
+  display: inline-flex;
+  align-items: center;
+}
+.ratingValue {
+  font-size: var(--type-caption-size);
+  line-height: var(--type-caption-leading);
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  opacity: 0.5;
+  font-variant-numeric: tabular-nums;
+}
+.quote {
+  overflow-wrap: anywhere;
+  margin-top: 10px;
+  margin-bottom: 8px;
+  margin-left: 0;
+  width: 100%;
+  font-size: var(--type-label-size, 14px);
+  line-height: 22px;
+  color: var(--color-text-brand);
+}
+.quoteText {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.readMore {
+  align-self: flex-start;
+  margin: 0 0 12px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #0e7490;
+  font: inherit;
+  font-size: var(--type-caption-size);
+  line-height: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  touch-action: manipulation;
+}
+.readMore::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+.cardInteractive:hover .readMore {
+  color: var(--color-surface-brand);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.readMore:focus-visible {
+  outline: none;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.author {
+  overflow-wrap: anywhere;
+  margin-top: auto;
+  width: 100%;
+  border-top: 1px solid var(--color-border-brand);
+  padding-block: 12px;
+  color: var(--color-text-primary);
+  font-size: var(--type-label-size, 14px);
+  line-height: 20px;
+  font-weight: 700;
+}
+
+/* Full-review popup modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: min(560px, calc(100vw - 32px));
+  max-width: none;
+  max-height: min(85dvh, 640px);
+  padding: 0;
+  border: 1px solid var(--color-border-brand);
+  border-radius: var(--radius-card);
+  background: var(--color-surface-page);
+  color: var(--color-text-primary);
+  box-shadow: 0 24px 48px rgb(2 48 71 / 24%), 0 2px 8px rgb(2 48 71 / 16%);
+  overflow: hidden;
+}
+.modal[open] {
+  display: flex;
+  flex-direction: column;
+  animation: reviewModalIn 200ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.modal::backdrop {
+  background: rgb(15 23 42 / 55%);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.modalHeader {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 16px 14px 20px;
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+.modalClose {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-round);
+  background: transparent;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: background-color 140ms ease, color 140ms ease;
+}
+.modalClose:hover {
+  background: var(--color-surface-muted);
+  color: var(--color-text-primary);
+}
+.modalClose:focus-visible {
+  outline: 2px solid var(--color-border-brand);
+  outline-offset: 2px;
+}
+.modalBody {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 20px 20px 24px;
+}
+.modalQuote {
+  margin: 0;
+  color: var(--color-text-brand);
+  font-size: var(--type-label-size);
+  line-height: 1.7;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+.modalFooter {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 20px;
+  border-top: 1px solid var(--color-border-brand);
+  background: var(--color-surface-water);
+}
+.modalAuthorGroup {
+  min-width: 0;
+}
+.modalAuthor {
+  margin: 0;
+  color: var(--color-text-primary);
+  font-size: var(--type-label-size);
+  line-height: 20px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+.modalRole {
+  margin: 2px 0 0;
+  color: var(--color-text-secondary);
+  font-size: var(--type-caption-size);
+  line-height: 16px;
+}
+.modalDoneButton {
+  flex-shrink: 0;
+  min-height: 44px;
+  padding: 8px 20px;
+  border: 0;
+  border-radius: var(--radius-control-large);
+  background: var(--color-surface-brand);
+  color: var(--color-surface-page);
+  font: inherit;
+  font-size: var(--type-label-size);
+  font-weight: 500;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: background-color 140ms ease;
+}
+.modalDoneButton:hover {
+  background: var(--color-text-brand);
+}
+.modalDoneButton:focus-visible {
+  outline: 2px solid var(--color-border-brand);
+  outline-offset: 2px;
+}
+@keyframes reviewModalIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+.action {
+  margin-top: 24px;
+  min-height: 44px;
+  height: auto;
+  width: auto;
+  padding: 10px 24px;
+  border-radius: var(--radius-control-large);
+  background: var(--color-surface-water);
+  border: 1px solid var(--color-text-primary);
+  color: var(--color-text-primary);
+  font-size: var(--type-label-size);
+  font-weight: 600;
+  line-height: 20px;
+  box-shadow:
+    0 4px 12px rgb(61 20 2 / 15%),
+    0 1px 3px rgb(61 20 2 / 15%);
+}
+.action:hover {
+  background: var(--color-surface-muted);
+}
+.action:active {
+  background: var(--color-surface-emphasis);
+}
+@media (max-width: 374px) {
+  .card {
+    min-height: 205px;
+  }
+}
+@variant desktop {
+  .section {
+    margin-top: 100px;
+    padding-bottom: 36px;
+  }
+  .viewport {
+    --slide-spacing: 24px;
+    padding-inline: 8px;
+    margin-inline: -8px;
+  }
+  .track {
+    margin-left: calc(var(--slide-spacing) * -1);
+    padding: 0;
+  }
+  .slide {
+    flex: 0 0 calc(100% / 3);
+    width: auto;
+    max-width: none;
+    padding-inline: var(--slide-spacing) 0;
+  }
+  .card {
+    min-height: 266px;
+    height: 100%;
+    border: 1px solid var(--color-border-brand);
+    border-radius: var(--radius-control-large);
+    padding: 18px 13px 0;
+  }
+  .rating {
+    height: 39.6px;
+    gap: 6px;
+  }
+  .ratingValue {
+    font-size: var(--type-label-size);
+    line-height: var(--type-label-leading);
+  }
+  .quote {
+    margin-top: 14px;
+    margin-bottom: 6px;
+    margin-left: 0;
+    width: auto;
+    font-size: var(--type-label-size);
+    line-height: 22px;
+    padding-inline: 6px 0;
+  }
+  .quoteText {
+    -webkit-line-clamp: 4;
+  }
+  .readMore {
+    padding-left: 6px;
+    margin-bottom: 12px;
+    font-size: var(--type-caption-size);
+  }
+  .modalHeader {
+    padding: 20px 20px 16px 24px;
+  }
+  .modalBody {
+    padding: 24px 24px 28px;
+  }
+  .modalQuote {
+    font-size: var(--type-body-size);
+    line-height: 1.7;
+  }
+  .modalFooter {
+    padding: 16px 24px;
+  }
+  .author {
+    width: auto;
+    padding-block: 10px 12px;
+    font-size: var(--type-label-size);
+    line-height: var(--type-label-leading);
+    font-weight: 700;
+  }
+  .action {
+    margin-top: 58px;
+    width: 290px;
+    height: 54px;
+    border-radius: 4.485px;
+    font-size: var(--type-section-size);
+    line-height: var(--type-section-leading);
+    letter-spacing: -0.15px;
+    box-shadow: var(--shadow-content-card);
+  }
+}
+@variant tablet {
+  .section {
+    margin-top: var(--landing-section-space);
+  }
+  .viewport {
+    --slide-spacing: var(--space-card-gap-wide);
+    padding-inline: 8px;
+    margin-inline: -8px;
+  }
+  .track {
+    margin-left: calc(var(--slide-spacing) * -1);
+    padding: 0;
+  }
+  .slide {
+    flex: 0 0 100%;
+    width: auto;
+    max-width: none;
+    padding-inline: var(--slide-spacing) 0;
+  }
+  .card {
+    height: 100%;
+    min-height: 288px;
+    padding: 20px 20px 0;
+    border: 1px solid var(--color-border-brand);
+    border-radius: var(--radius-control-large);
+  }
+  .rating {
+    height: 30px;
+  }
+  .rating img {
+    width: 30px;
+    height: 30px;
+  }
+  .ratingValue {
+    font-size: var(--type-label-size);
+    line-height: var(--type-label-leading);
+  }
+  .quote {
+    margin: 18px 0 8px;
+    width: auto;
+    padding: 0;
+    font-size: var(--type-label-size);
+    line-height: 22px;
+  }
+  .quoteText {
+    -webkit-line-clamp: 4;
+  }
+  .readMore {
+    margin-bottom: 14px;
+  }
+  .modalHeader {
+    padding: 18px 18px 14px 24px;
+  }
+  .modalBody {
+    padding: 22px 24px 26px;
+  }
+  .modalQuote {
+    font-size: var(--type-body-size);
+  }
+  .modalFooter {
+    padding: 16px 24px;
+  }
+  .author {
+    width: auto;
+    padding-block: 16px;
+    font-size: var(--type-label-size);
+    line-height: 22px;
+  }
+  .action {
+    min-height: 48px;
+    height: auto;
+    width: auto;
+    padding: 8px 32px;
+    font-size: var(--type-section-size);
+    line-height: var(--type-section-leading);
+    margin-top: 24px;
+  }
+  @media (min-width: 769px) {
+    .slide {
+      flex-basis: 50%;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cardInteractive,
+  .modal[open],
+  .modalClose,
+  .modalDoneButton {
+    animation: none;
+    transition: none;
+  }
+}

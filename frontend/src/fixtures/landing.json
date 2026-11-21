@@ -1,0 +1,348 @@
+{
+  "labels": {
+    "categories": "Kategori",
+    "tickets": "Tiket",
+    "promos": "Promo",
+    "events": "Event",
+    "reviews": "Ulasan & Pengalaman",
+    "weekday": "Weekday",
+    "weekend": "Weekend",
+    "rating_suffix": "dari 5 bintang",
+    "back_to_top": "Kembali ke atas"
+  },
+  "hero": {
+    "eyebrow": "Galaxy Waterpark",
+    "title": "Selamat Datang di Website Galaxy Waterpark",
+    "description": "Nikmati wahana air, kolam, dan pengalaman terbaik di Yogyakarta.",
+    "image_url": "/images/figma/hero-final.png",
+    "cta_label": "Lihat Promo",
+    "cta_href": "#promo",
+    "secondary_cta_label": "Lihat Wahana",
+    "secondary_cta_href": "#katalog"
+  },
+  "schedule": {
+    "title": "Waktu operasional",
+    "weekday_label": "Senin - Kamis",
+    "weekday_hours": "09.00-16.00 WIB",
+    "weekend_label": "Sabtu - Minggu",
+    "weekend_hours": "08.00-16.00 WIB",
+    "closed_label": "JUMAT LIBUR OPERASIONAL (MAINTENANCE)"
+  },
+  "categories": [
+    {
+      "id": "family",
+      "label": "Keluarga",
+      "image_url": "/images/figma/family-desktop.png",
+      "mobile_image_url": "/images/figma/family-mobile.png",
+      "href": "/katalog/family"
+    },
+    {
+      "id": "sports-wellness",
+      "label": "Olahraga & Kebugaran",
+      "image_url": "/images/figma/pool-desktop.png",
+      "mobile_image_url": "/images/figma/pool-mobile.png",
+      "href": "/katalog/sports-wellness"
+    },
+    {
+      "id": "facilities",
+      "label": "Fasilitas",
+      "image_url": "/images/figma/facility-final.png",
+      "mobile_image_url": "/images/figma/facility-final.png",
+      "href": "/katalog/facilities"
+    }
+  ],
+  "tickets": [
+    {
+      "id": "infant",
+      "label": "Bayi",
+      "age": "1-2 Tahun",
+      "weekday": "Rp20.000",
+      "weekend": "Rp20.000"
+    },
+    {
+      "id": "child",
+      "label": "Anak",
+      "age": "3-10 Tahun",
+      "weekday": "Rp35.000",
+      "weekend": "Rp40.000"
+    },
+    {
+      "id": "adult",
+      "label": "Dewasa",
+      "age": "11-59 Tahun",
+      "weekday": "Rp40.000",
+      "weekend": "Rp45.000"
+    },
+    {
+      "id": "senior",
+      "label": "Lansia",
+      "age": "> 60 Tahun",
+      "weekday": "Rp20.000",
+      "weekend": "Rp20.000"
+    }
+  ],
+  "promos": [
+    {
+      "id": "weekday-splash-1",
+      "title": "Weekday Splash",
+      "description": "Promo Weekday Splash Galaxy Waterpark.",
+      "image_url": "/images/figma/promo-final.png",
+      "image_alt": "Poster promo Weekday Splash Galaxy Waterpark",
+      "href": "/promo"
+    },
+    {
+      "id": "weekday-splash-2",
+      "title": "Weekday Splash",
+      "description": "Promo Weekday Splash Galaxy Waterpark.",
+      "image_url": "/images/figma/promo-final.png",
+      "image_alt": "Poster promo Weekday Splash Galaxy Waterpark",
+      "href": "/promo"
+    },
+    {
+      "id": "weekday-splash-3",
+      "title": "Weekday Splash",
+      "description": "Promo Weekday Splash Galaxy Waterpark.",
+      "image_url": "/images/figma/promo-final.png",
+      "image_alt": "Poster promo Weekday Splash Galaxy Waterpark",
+      "href": "/promo"
+    },
+    {
+      "id": "weekday-splash-4",
+      "title": "Weekday Splash",
+      "description": "Promo Weekday Splash Galaxy Waterpark.",
+      "image_url": "/images/figma/promo-final.png",
+      "image_alt": "Poster promo Weekday Splash Galaxy Waterpark",
+      "href": "/promo"
+    }
+  ],
+  "events": [
+    {
+      "id": "dive-into-happiness-1",
+      "title": "Dive into Happiness",
+      "description": "Nikmati liburan sekolah seru dengan berbagai wahana permainan air interaktif dan games berhadiah menarik khusus untuk buah hati Anda!",
+      "excerpt": "Nikmati liburan sekolah seru dengan berbagai wahana...",
+      "image_url": "/images/figma/event-final.png",
+      "image_alt": "Poster acara Dive into Happiness Galaxy Waterpark",
+      "href": "/event"
+    },
+    {
+      "id": "dive-into-happiness-2",
+      "title": "Dive into Happiness",
+      "description": "Nikmati liburan sekolah seru dengan berbagai wahana permainan air interaktif dan games berhadiah menarik khusus untuk buah hati Anda!",
+      "excerpt": "Nikmati liburan sekolah seru dengan berbagai wahana...",
+      "image_url": "/images/figma/event-final.png",
+      "image_alt": "Poster acara Dive into Happiness Galaxy Waterpark",
+      "href": "/event"
+    },
+    {
+      "id": "dive-into-happiness-3",
+      "title": "Dive into Happiness",
+      "description": "Nikmati liburan sekolah seru dengan berbagai wahana permainan air interaktif dan games berhadiah menarik khusus untuk buah hati Anda!",
+      "excerpt": "Nikmati liburan sekolah seru dengan berbagai wahana...",
+      "image_url": "/images/figma/event-final.png",
+      "image_alt": "Poster acara Dive into Happiness Galaxy Waterpark",
+      "href": "/event"
+    },
+    {
+      "id": "dive-into-happiness-4",
+      "title": "Dive into Happiness",
+      "description": "Nikmati liburan sekolah seru dengan berbagai wahana permainan air interaktif dan games berhadiah menarik khusus untuk buah hati Anda!",
+      "excerpt": "Nikmati liburan sekolah seru dengan berbagai wahana...",
+      "image_url": "/images/figma/event-final.png",
+      "image_alt": "Poster acara Dive into Happiness Galaxy Waterpark",
+      "href": "/event"
+    }
+  ],
+  "about": {
+    "title": "Tentang Kami",
+    "paragraphs": [
+      {
+        "text": "Galaxy Waterpark sudah cukup lama hadir di tengah keluarga sebagai salah satu pilihan tempat rekreasi air yang asyik dan terjangkau. "
+      },
+      {
+        "text": "Berdiri sejak 9 Desember 2014, kami terus berupaya menjaga kualitas kolam, kebersihan area, serta kenyamanan fasilitas yang ada agar pengunjung dari berbagai usia bisa bersantai dan menikmati waktu liburan dengan tenang. Mulai dari anak-anak hingga orang dewasa, semuanya bisa menikmati berbagai pilihan kolam dan wahana yang tersedia di sini.",
+        "emphasis": "9 Desember 2014"
+      }
+    ],
+    "image_url": "/images/figma/about-final.png",
+    "image_alt": "Wahana seluncuran air Galaxy Waterpark",
+    "backdrop_url": "/images/figma/landing/about-backdrop.png"
+  },
+  "reviews": [
+    {
+      "id": "rina-setyowati",
+      "name": "Rina Setyowati",
+      "text": "\"Tempatnya bersih banget! Kolam anak dangkal dan tidak pedih di mata. Ember tumpahnya jadi favorit anak saya umur 4 tahun. Parkiran luas dan makanan di kantinnya enak serta harganya sangat wajar.\"",
+      "rating": 4.5,
+      "status": "menunggu"
+    },
+    {
+      "id": "bambang",
+      "name": "Bambang",
+      "text": "\"Kunjungan outing class 85 siswa TK berjalan sangat lancar. Pengawasan lifeguard-nya aktif mengingatkan anak-anak. Proses reservasi via WA sangat responsif dan dapat potongan diskon grup.\"",
+      "rating": 4.5,
+      "status": "menunggu"
+    },
+    {
+      "id": "dimas-kurniawan",
+      "name": "Dimas Kurniawan",
+      "text": "\"Slide 15 meternya menantang banget! Kolam arusnya juga bikin rileks setelah capek meluncur. Recommended buat liburan akhir pekan bareng teman-teman kampus di Jogja.\"",
+      "rating": 4,
+      "status": "menunggu"
+    },
+    {
+      "id": "sari-wulandari",
+      "name": "Sari Wulandari",
+      "text": "\"Area bermain anak menyenangkan dan banyak tempat untuk beristirahat. Kami bisa menikmati waktu bersama keluarga dengan nyaman.\"",
+      "rating": 5,
+      "status": "menunggu"
+    },
+    {
+      "id": "andi-pratama",
+      "name": "Andi Pratama",
+      "text": "\"Kolam arus jadi pilihan favorit kami. Cocok untuk bersantai setelah mencoba wahana seluncuran bersama teman-teman.\"",
+      "rating": 4,
+      "status": "dipublikasi"
+    },
+    {
+      "id": "dewi-lestari",
+      "name": "Dewi Lestari",
+      "text": "\"Anak-anak senang bermain air di sini. Tempat bilas mudah ditemukan dan tersedia pilihan makanan untuk seluruh keluarga.\"",
+      "rating": 4.5,
+      "status": "dipublikasi"
+    },
+    {
+      "id": "rizky-saputra",
+      "name": "Rizky Saputra",
+      "text": "\"Datang bersama rombongan teman dan mendapatkan pengalaman yang seru. Ada pilihan wahana untuk yang ingin santai maupun mencoba tantangan.\"",
+      "rating": 5,
+      "status": "dipublikasi"
+    },
+    {
+      "id": "nina-rahmawati",
+      "name": "Nina Rahmawati",
+      "text": "\"Kami menghabiskan akhir pekan dengan berenang dan menikmati suasana taman. Tempat istirahatnya membantu saat anak-anak mulai lelah.\"",
+      "rating": 4.5,
+      "status": "dipublikasi"
+    },
+    {
+      "id": "fajar-hidayat",
+      "name": "Fajar Hidayat",
+      "text": "\"Pilihan kolamnya beragam sehingga setiap anggota keluarga punya aktivitas favorit. Ingin datang lagi saat liburan berikutnya.\"",
+      "rating": 4,
+      "status": "dipublikasi"
+    },
+    {
+      "id": "maya-putri",
+      "name": "Maya Putri",
+      "text": "\"Pengalaman liburan keluarga yang menyenangkan. Anak saya paling suka ember tumpah dan tidak sabar untuk mencoba bermain lagi.\"",
+      "rating": 5,
+      "status": "dipublikasi"
+    }
+  ],
+  "location": {
+    "title": "Kunjungi Kami",
+    "address": "Jalan Wonosari KM. 6, Kalangan, Baturetno, Banguntapan, Bantul, Yogyakarta",
+    "href": "https://www.google.com/maps/search/?api=1&query=Galaxy+Waterpark+Yogyakarta",
+    "features": [
+      {
+        "id": "bus",
+        "title": "Akses Bus & Elf",
+        "description": "Jalan lebar, parkir luas muat 20+ bus",
+        "mobile_description": "Jalan lebar, parkiran luas +10 bus",
+        "icon": "bus"
+      },
+      {
+        "id": "clock",
+        "title": "Akses Bus & Elf",
+        "mobile_title": "30 menit dari kota",
+        "description": "Area Baturetno, Yogyakarta",
+        "icon": "clock"
+      },
+      {
+        "id": "parking",
+        "title": "Parkir Aman",
+        "description": "Dipantau CCTV 24 jam",
+        "icon": "parking"
+      }
+    ],
+    "embed_url": "https://maps.google.com/maps?q=Galaxy%20Waterpark%20Yogyakarta&z=16&output=embed",
+    "map_label": "Peta lokasi Galaxy Waterpark di Baturetno, Yogyakarta"
+  },
+  "partners": {
+    "title": "Mitra Kami",
+    "description": "Kami bangga dapat bermitra dan berkolaborasi bersama brand serta komunitas terkemuka ini.",
+    "items": [
+      {
+        "id": "partner-1",
+        "name": "The English Cut Clothing Company of Savile Row",
+        "image_url": "/images/figma/landing/partner-academy.png"
+      },
+      {
+        "id": "partner-2",
+        "name": "Swim Team Academy",
+        "image_url": "/images/figma/landing/partner-academy.png"
+      },
+      {
+        "id": "partner-3",
+        "name": "Aqua Club",
+        "image_url": "/images/figma/landing/partner-academy.png"
+      },
+      {
+        "id": "partner-4",
+        "name": "Jogja Swim",
+        "image_url": "/images/figma/landing/partner-academy.png"
+      },
+      {
+        "id": "partner-5",
+        "name": "Komunitas Olahraga Air Yogyakarta",
+        "image_url": "/images/figma/landing/partner-academy.png"
+      },
+      {
+        "id": "partner-6",
+        "name": "Pelangi Kids",
+        "image_url": "/images/figma/landing/partner-academy.png"
+      },
+      {
+        "id": "partner-7",
+        "name": "Sekolah Renang Generasi Sehat",
+        "image_url": "/images/figma/landing/partner-academy.png"
+      },
+      {
+        "id": "partner-8",
+        "name": "Wahana Sport",
+        "image_url": "/images/figma/landing/partner-academy.png"
+      },
+      {
+        "id": "partner-9",
+        "name": "Liburan Keluarga",
+        "image_url": "/images/figma/landing/partner-academy.png"
+      },
+      {
+        "id": "partner-10",
+        "name": "Galaxy Friends",
+        "image_url": "/images/figma/landing/partner-academy.png"
+      }
+    ]
+  },
+  "review_action": {
+    "label": "Berikan Ulasan Anda",
+    "href": "/ulasan"
+  },
+  "more_promos": {
+    "label": "Lihat Selengkapnya",
+    "mobile_label": "Lihat selengkapnya",
+    "href": "/promo"
+  },
+  "more_events": {
+    "label": "Lihat Selengkapnya",
+    "mobile_label": "Lihat selengkapnya",
+    "href": "/event"
+  },
+  "carousel_labels": {
+    "page": "halaman",
+    "instructions": "Geser atau gunakan tombol panah untuk melihat lainnya",
+    "pause": "Jeda pergerakan mitra",
+    "resume": "Lanjutkan pergerakan mitra"
+  }
+}

@@ -1,0 +1,295 @@
+.loginWrapper {
+  min-height: 100vh;
+  display: flex;
+  background-color: #f8fafc;
+}
+
+/* Left Hero Banner - Screen 1 */
+.leftHero {
+  flex: 0 0 545px;
+  background-color: #fffdf0;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  border-right: 1px solid #dee1e5;
+}
+
+.heroBrandHeader {
+  padding: 28px 40px 18px;
+  border-bottom: 1.5px solid #219ebc;
+}
+
+.heroBrandTitle {
+  font-size: 1.625rem;
+  font-weight: 700;
+  color: #090d12;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.heroBrandSubtitle {
+  font-size: 0.9375rem;
+  color: #3e484d;
+  font-weight: 500;
+  margin: 4px 0 0 0;
+}
+
+.heroImageContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 40px;
+}
+
+.heroImageWrapper {
+  width: 100%;
+  max-width: 440px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgba(2, 48, 71, 0.08), 0 8px 10px -6px rgba(2, 48, 71, 0.04);
+}
+
+.heroImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* Right Login Form Section */
+.rightFormSection {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+  background-color: #ffffff;
+}
+
+.formCard {
+  width: 100%;
+  max-width: 652px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 16px;
+  padding: 32px 24px;
+}
+
+/* SSO Metadata Row */
+.portalMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.ssoBadge {
+  display: inline-block;
+  background-color: #e0f0ff;
+  color: #00677d;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  letter-spacing: 0.01em;
+}
+
+.portalVersion {
+  font-size: 12px;
+  color: #6e797d;
+}
+
+.loginTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #023047;
+  line-height: 1.35;
+  margin: 0 0 20px 0;
+}
+
+/* Security Notice Alert Banner */
+.alertBox {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background-color: #ffe8a3;
+  border: 1px solid #ffb703;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 24px;
+}
+
+.alertIcon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.alertText {
+  font-size: 12.5px;
+  color: #b25700;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.alertText strong {
+  color: #92400e;
+}
+
+/* Form Fields */
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.labelRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #023047;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.forgotLink {
+  font-size: 12px;
+  color: #00677d;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.15s;
+}
+
+.forgotLink:hover {
+  text-decoration: underline;
+  color: #023047;
+}
+
+.inputGroup {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  border: 1px solid #8ecae6;
+  border-radius: 8px;
+  padding: 0 14px;
+  gap: 10px;
+  background-color: #ffffff;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.inputGroup:focus-within {
+  border-color: #219ebc;
+  box-shadow: 0 0 0 2px rgba(33, 158, 188, 0.2);
+}
+
+.inputIcon {
+  color: #219ebc;
+  flex-shrink: 0;
+}
+
+.inputGroup input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #023047;
+  width: 100%;
+  background: transparent;
+}
+
+.inputGroup input::placeholder {
+  color: #94a3b8;
+}
+
+.eyeToggleBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: #6e797d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: color 0.15s;
+}
+
+.eyeToggleBtn:hover {
+  color: #023047;
+}
+
+.checkboxRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: #219ebc;
+  cursor: pointer;
+}
+
+.checkboxLabel {
+  font-size: 13px;
+  color: #3e484d;
+  cursor: pointer;
+  user-select: none;
+}
+
+.btnLogin {
+  width: 100%;
+  height: 48px;
+  background-color: #fb8500;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.btnLogin:hover {
+  background-color: #ea7a00;
+}
+
+.btnLogin:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.errorMessage {
+  margin: 0 0 20px;
+  padding: 12px 14px;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  background-color: #fef2f2;
+  color: #b91c1c;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .leftHero {
+    display: none;
+  }
+  .rightFormSection {
+    padding: 24px;
+  }
+  .formCard {
+    padding: 24px;
+  }
+}

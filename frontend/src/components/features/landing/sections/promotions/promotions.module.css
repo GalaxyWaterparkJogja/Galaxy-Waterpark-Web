@@ -1,0 +1,75 @@
+@reference "../../../../../styles/breakpoints.css";
+
+.section {
+  scroll-margin-top: var(--header-height, 64px);
+  margin-top: 30px;
+  padding-bottom: 28px;
+}
+.track {
+  padding-inline: var(--landing-gutter);
+}
+.slide {
+  width: calc((100% - 16px) / 2);
+}
+.poster {
+  width: 100%;
+  aspect-ratio: 174 / 216.336;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-content-card);
+  overflow: hidden;
+}
+.poster img {
+  object-fit: cover;
+}
+@variant motion-desktop {
+  .poster {
+    transition: transform var(--motion-hover-duration) var(--motion-ease),
+      box-shadow var(--motion-hover-duration) var(--motion-ease);
+  }
+  .poster:is(:hover, :focus-visible) {
+    z-index: 2;
+    transform: translateY(var(--motion-card-lift)) scale(var(--motion-card-scale));
+    box-shadow: var(--shadow-card);
+  }
+}
+@variant desktop {
+  .section {
+    margin-top: 91px;
+    padding-bottom: 36px;
+  }
+  /* The manually positioned Figma posters bleed 3px beyond the content frame. */
+  .track {
+    margin-right: -3px;
+    overflow: visible;
+    padding: 0;
+    scroll-padding: 0;
+  }
+  .slide {
+    width: auto;
+  }
+  .poster {
+    aspect-ratio: 302 / 375.479;
+    border-radius: 0;
+  }
+}
+
+@variant tablet {
+  .section {
+    margin-top: var(--landing-section-space);
+  }
+  .track {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-card-gap-wide);
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    scroll-padding: 0;
+  }
+  .slide {
+    width: auto;
+  }
+  .poster {
+    border-radius: var(--radius-card);
+  }
+}

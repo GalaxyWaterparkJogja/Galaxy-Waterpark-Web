@@ -1,0 +1,127 @@
+@reference "./breakpoints.css";
+
+/* Shared runtime values. Asset-specific crops and section geometry stay local. */
+:root {
+  --color-surface-page: #f8fafc;
+  --color-surface-raised: #ffffff;
+  --color-surface-muted: #e2e8f0;
+  --color-surface-emphasis: #cbd5e1;
+  --color-surface-placeholder: #d9d9d9;
+  --color-surface-wireframe-line: #f1f5fa;
+  --color-surface-accent: #56b5d3;
+  --color-text-primary: #090d12;
+  --color-text-secondary: #475569;
+  --color-text-strong: #334155;
+  --color-text-muted: #64748b;
+  /* Empty-image design (Figma 1003:2681): Neutral/200 field, Neutral/400 glyph. */
+  --color-image-empty-background: var(--color-surface-muted);
+  --color-image-empty-foreground: #94a3b8;
+  --color-text-brand: #022336;
+  --color-surface-brand: #023047;
+  --color-surface-water: #f0f9fd;
+  --color-surface-warm: #fffdf0;
+  --color-action-primary: #fb8500;
+  --color-border-brand: #219ebc;
+
+  --font-family-body: var(--font-inter), Arial, sans-serif;
+  --type-caption-size: 12px;
+  --type-caption-leading: 16px;
+  --type-label-size: 14px;
+  --type-label-leading: 20px;
+  --type-body-size: 16px;
+  --type-body-leading: 24px;
+  --type-section-size: 20px;
+  --type-section-leading: 28px;
+  --type-section-desktop-size: 36px;
+  --type-section-desktop-leading: 44px;
+  --type-section-desktop-tracking: -0.4px;
+  --type-action-size: 24px;
+  --type-action-leading: 32px;
+  --type-page-title-size: clamp(28px, 3.33vw, 48px);
+
+  --radius-control: 4px;
+  --radius-control-large: 8px;
+  --radius-card: 12px;
+  --radius-round: 50%;
+  --space-card-gap-compact: 12px;
+  --space-card-gap: 16px;
+  --space-card-gap-wide: 24px;
+
+  --shadow-card: 0 4px 12px rgb(2 48 71 / 15%), 0 1px 3px rgb(2 48 71 / 15%);
+  --shadow-content-card:
+    0 4px 12px rgb(30 41 59 / 15%), 0 1px 3px rgb(30 41 59 / 15%);
+
+  /* The approved legacy frame is stepped; the newer landing frame is fluid. */
+  --gutter: 24px;
+  --page-gutter: var(--gutter);
+  --layout-gutter: 24px;
+  --layout-max-width: 100%;
+  --landing-gutter: var(--gutter);
+  --landing-content-max: 1280px;
+  --landing-content-width: calc(100% - 2 * var(--landing-gutter));
+  --container-max-width: var(--landing-content-max);
+  --content-grid-max: var(--container-max-width);
+  --footer-grid-max: var(--container-max-width);
+  --footer-main-width: 1fr;
+  --footer-brand-width: 628px;
+  --footer-card-width: 290px;
+  --footer-column-gap: 32px;
+
+  /* Compatibility aliases keep existing consumers and Tailwind mappings intact. */
+  --background: var(--color-surface-page);
+  --foreground: var(--color-text-primary);
+  --wireframe-surface: var(--color-surface-muted);
+  --wireframe-emphasis: var(--color-surface-emphasis);
+  --wireframe-image: var(--color-surface-placeholder);
+  --wireframe-line: var(--color-surface-wireframe-line);
+  --type-section-tablet-size: 28px;
+  --type-section-tablet-leading: 36px;
+  --landing-section-space: 48px;
+  --header-height: 64px;
+}
+
+@media (min-width: 600px) {
+  :root {
+    --layout-gutter: 40px;
+  }
+}
+
+@variant tablet {
+  :root {
+    --gutter: clamp(32px, 4vw, 48px);
+    --landing-gutter: clamp(32px, 4vw, 48px);
+    --type-section-tablet-size: 28px;
+    --type-section-tablet-leading: 36px;
+    --landing-section-space: 64px;
+  }
+}
+
+@variant desktop {
+  :root {
+    --layout-gutter: 48px;
+    --layout-max-width: 1200px;
+    --gutter: clamp(40px, 5.555556vw, 80px);
+    --landing-gutter: clamp(40px, 5.555556vw, 80px);
+    --landing-section-space: 89px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --layout-gutter: 48px;
+    --layout-max-width: 1200px;
+  }
+}
+
+@media (min-width: 1440px) {
+  :root {
+    --layout-gutter: 80px;
+    --layout-max-width: 1440px;
+  }
+}
+
+@media (max-width: 359px) {
+  :root {
+    --layout-gutter: 20px;
+  }
+}

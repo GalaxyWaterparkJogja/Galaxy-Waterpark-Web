@@ -1,0 +1,7 @@
+/* Shared motion vocabulary; section geometry remains in section Modules. */
+:root {
+  --motion-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --motion-hover-duration: 360ms;
+  --motion-card-lift: -5px;
+  --motion-card-scale: 1.025;
+}

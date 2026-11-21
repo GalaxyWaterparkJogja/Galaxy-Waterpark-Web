@@ -1,0 +1,428 @@
+.section {
+  width: 100%;
+  max-width: 1062px;
+  padding-bottom: 48px;
+}
+
+.uploadCard {
+  width: 100%;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 28px 20px;
+  margin-bottom: 32px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  background: var(--color-image-empty-background, #e2e8f0);
+  color: #023047;
+  font: inherit;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgb(15 23 42 / 10%);
+  transition: background-color 0.15s;
+}
+
+.uploadCard:hover {
+  background: #d8e1ec;
+}
+
+.uploadCard:focus-visible {
+  outline: 3px solid #219ebc;
+  outline-offset: 2px;
+}
+
+.uploadIcon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 4px;
+}
+
+.uploadTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #090d12;
+}
+
+.uploadHint {
+  font-size: 0.8125rem;
+  color: #475569;
+}
+
+.sectionHeading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #090d12;
+  margin: 0 0 18px;
+}
+
+.photoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.photoCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgb(15 23 42 / 10%);
+}
+
+.photoFrame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 518 / 409;
+  background: var(--color-image-empty-background, #e2e8f0);
+  overflow: hidden;
+}
+
+.photoImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.photoOverlayActions {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.photoMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+}
+
+.photoMetaText {
+  min-width: 0;
+}
+
+.photoTitle {
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #090d12;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.photoCaption {
+  margin: 2px 0 0;
+  font-size: 0.75rem;
+  color: #64748b;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.photoBadges {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.categoryBadge {
+  padding: 3px 10px;
+  border-radius: 9999px;
+  background: #e0f2fe;
+  color: #0369a1;
+  font-size: 0.6875rem;
+  font-weight: 600;
+}
+
+.statusBadge {
+  flex-shrink: 0;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+}
+
+.statusActive {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.statusInactive {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.deleteIconBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 6px;
+  background: #d00416;
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 20%);
+}
+
+.deleteIconBtn:hover:not(:disabled) {
+  background: #b00313;
+}
+
+.editIconBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #023047;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #023047;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 16%);
+}
+
+.editIconBtn:hover:not(:disabled) {
+  background: #f1f5f9;
+}
+
+.deleteIconBtn:disabled,
+.editIconBtn:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
+.stateMessage {
+  padding: 32px;
+  border: 1px dashed #cbd5e1;
+  border-radius: 10px;
+  color: #64748b;
+  text-align: center;
+  background: #ffffff;
+}
+
+.errorMessage {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 0.875rem;
+}
+
+.errorMessage button {
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.toast {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 50;
+  padding: 12px 20px;
+  border-radius: 10px;
+  background: #023047;
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 500;
+  box-shadow: 0 10px 25px rgb(2 48 71 / 25%);
+}
+
+/* Sub-view Add / Edit */
+.formHeading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 20px;
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  color: #090d12;
+  cursor: pointer;
+}
+
+.backButton:hover:not(:disabled) {
+  background: #e2e8f0;
+}
+
+.formTitle {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #090d12;
+}
+
+.formCard {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px;
+  border: 2px solid #023047;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgb(15 23 42 / 12%);
+  overflow: hidden;
+}
+
+.formFieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+.imageStage {
+  width: 100%;
+  aspect-ratio: 518 / 409;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #cbd5e1;
+}
+
+.metaGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #023047;
+}
+
+.field input[type="text"],
+.field select {
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid #94a3b8;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #090d12;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.field input[type="text"]:focus,
+.field select:focus {
+  outline: none;
+  border-color: #023047;
+  box-shadow: 0 0 0 2px rgb(2 48 71 / 12%);
+}
+
+.checkboxLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #023047;
+  cursor: pointer;
+}
+
+.formActions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 6px;
+}
+
+.cancelButton,
+.saveButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgb(15 23 42 / 14%);
+}
+
+.cancelButton {
+  border: 1px solid #94a3b8;
+  background: #ffffff;
+  color: #090d12;
+}
+
+.cancelButton:hover:not(:disabled) {
+  background: #f8fafc;
+}
+
+.saveButton {
+  border: 0;
+  background: #023047;
+  color: #ffffff;
+}
+
+.saveButton:hover:not(:disabled) {
+  background: #034566;
+}
+
+.cancelButton:disabled,
+.saveButton:disabled,
+.backButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+@media (max-width: 900px) {
+  .photoGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .metaGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .formCard {
+    padding: 16px;
+  }
+}

@@ -1,0 +1,151 @@
+@reference "../../../../../styles/breakpoints.css";
+
+.hours {
+  --hours-surface: #e0f3fa;
+  --hours-ink: var(--color-text-brand);
+  --hours-banner: #023047;
+  --hours-accent: #ffb703;
+  --hours-radius: var(--radius-control);
+  padding: 26px 24px 8px;
+  background: var(--color-surface-water);
+}
+
+.heading {
+  font-size: var(--type-section-size);
+  line-height: var(--type-section-leading);
+}
+
+.heading {
+  margin: 0 0 12px;
+}
+
+.card {
+  max-width: min(100%, 360px);
+  border-radius: var(--radius-card);
+  background: var(--hours-banner);
+  box-shadow:
+    0 4px 12px rgb(30 41 59 / 15%),
+    0 1px 3px rgb(30 41 59 / 15%);
+}
+
+.schedule {
+  min-height: 72px;
+  border-radius: var(--radius-card);
+  background: var(--hours-surface);
+  padding-block: 12px;
+}
+
+.label {
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: -0.12px;
+}
+
+.time {
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 700;
+  letter-spacing: -0.16px;
+}
+
+.divider {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.closedDay {
+  gap: 6px;
+  min-height: 38px;
+  font-size: 11px;
+  line-height: var(--type-caption-leading);
+  font-weight: 700;
+  color: var(--hours-accent);
+  letter-spacing: -0.12px;
+}
+
+.alert {
+  flex: 0 0 14px;
+  height: 14px;
+}
+
+@variant desktop {
+  .hours {
+    --hours-radius: 5px;
+    padding: 69px var(--gutter) 67px;
+  }
+
+  .heading {
+    font-size: var(--type-section-desktop-size);
+    line-height: var(--type-section-desktop-leading);
+    letter-spacing: var(--type-section-desktop-tracking);
+    text-transform: capitalize;
+  }
+
+  .heading {
+    margin-bottom: 21px;
+  }
+
+  .card {
+    max-width: 459px;
+  }
+
+  .schedule {
+    min-height: 81px;
+    padding-block: 12.5px;
+  }
+
+  .label,
+  .time {
+    font-size: var(--type-section-size);
+    line-height: var(--type-section-leading);
+    letter-spacing: -0.15px;
+  }
+
+  .closedDay {
+    min-height: 40px;
+    gap: 5px;
+    font-size: var(--type-label-size);
+    line-height: var(--type-label-leading);
+    font-weight: 700;
+    letter-spacing: -0.18px;
+  }
+
+  .alert {
+    flex-basis: 18.875px;
+    height: 18.875px;
+  }
+}
+
+@variant tablet {
+  .card {
+    max-width: 459px;
+  }
+  .hours {
+    padding: 48px var(--landing-gutter);
+  }
+  .heading {
+    font-size: var(--type-section-tablet-size);
+    line-height: var(--type-section-tablet-leading);
+    margin-bottom: 24px;
+  }
+  .schedule {
+    min-height: 88px;
+    padding-block: 16px;
+  }
+  .label,
+  .time {
+    font-size: var(--type-section-size);
+    line-height: var(--type-section-leading);
+  }
+  .divider img {
+    width: 80px;
+  }
+  .closedDay {
+    min-height: 48px;
+    padding-block: 12px;
+    font-size: var(--type-label-size);
+    line-height: var(--type-label-leading);
+  }
+}

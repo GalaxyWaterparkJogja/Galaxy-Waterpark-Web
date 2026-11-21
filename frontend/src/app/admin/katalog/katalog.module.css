@@ -1,0 +1,275 @@
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.katalogCard {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 14px rgb(15 23 42 / 12%);
+}
+
+.cardImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  background-color: var(--color-image-empty-background, #e2e8f0);
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.cardBody {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #090d12;
+  margin: 0 0 8px 0;
+}
+
+.cardDesc {
+  font-size: 0.8125rem;
+  color: #334155;
+  line-height: 1.55;
+  margin: 0 0 16px 0;
+  flex: 1;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  padding-top: 4px;
+}
+
+.iconButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 6px;
+  background: #d00416;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.iconButton:hover:not(:disabled) {
+  background: #b00313;
+}
+
+.iconButton:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
+.editIconButton {
+  border: 1px solid #023047;
+  background: #ffffff;
+  color: #023047;
+}
+
+.editIconButton:hover:not(:disabled) {
+  background: #f1f5f9;
+}
+
+.stateMessage {
+  padding: 32px;
+  border: 1px dashed #cbd5e1;
+  border-radius: 10px;
+  color: #64748b;
+  text-align: center;
+}
+
+.errorMessage {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 0.875rem;
+}
+
+.errorMessage button {
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.formHeading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 18px;
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #17212b;
+  cursor: pointer;
+}
+
+.formTitle {
+  margin: 0;
+  color: #090d12;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.catalogForm {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  overflow: hidden;
+  border: 2px solid #023047;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 14px rgb(2 48 71 / 12%);
+}
+
+.formBody {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  min-width: 0;
+  min-height: 400px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.imageColumn {
+  min-height: 380px;
+}
+
+.formFields {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 24px;
+}
+
+.formField {
+  display: grid;
+  gap: 6px;
+  color: #090d12;
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+.formField input,
+.formField select,
+.formField textarea {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #023047;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #090d12;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.formField input,
+.formField select {
+  height: 44px;
+  padding: 0 12px;
+}
+
+.formField textarea {
+  min-height: 110px;
+  padding: 10px 12px;
+  resize: vertical;
+}
+
+.formActions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.cancelButton,
+.saveButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgb(15 23 42 / 14%);
+}
+
+.cancelButton {
+  border: 1px solid #94a3b8;
+  background: #fff;
+  color: #090d12;
+}
+
+.saveButton {
+  border: 1px solid #023047;
+  background: #023047;
+  color: #fff;
+}
+
+.cancelButton:disabled,
+.saveButton:disabled,
+.backButton:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+@media (max-width: 900px) {
+  .cardGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .formBody {
+    grid-template-columns: 1fr;
+  }
+
+  .imageColumn {
+    min-height: 240px;
+  }
+}

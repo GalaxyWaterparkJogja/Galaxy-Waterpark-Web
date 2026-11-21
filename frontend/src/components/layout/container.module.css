@@ -1,0 +1,9 @@
+/* Shared content boundary. The full-width shell owns all responsive tokens. */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width, 100%);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  box-sizing: border-box;
+  min-width: 0;
+}

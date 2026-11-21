@@ -1,0 +1,36 @@
+@reference "../../../../styles/breakpoints.css";
+
+.reveal {
+  --landing-enter-y: 0px;
+  min-width: 0;
+}
+
+@variant motion-desktop {
+  .reveal {
+    --landing-enter-y: 24px;
+  }
+  .hero {
+    --landing-enter-y: 14px;
+  }
+}
+
+/* Essential hero content stays immediate on mobile and touch tablets. */
+@media (width < 1280px), (hover: none), (pointer: coarse) {
+  .hero {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Focused content must never wait for an entrance animation. */
+.reveal:focus-within {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+@media (prefers-reduced-motion: reduce), print {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

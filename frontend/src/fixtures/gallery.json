@@ -1,0 +1,9 @@
+[
+  {"id":"lazy-river-1","image_url":"/images/figma/gallery/lazy-river.webp","alt":"Pengunjung menikmati kolam arus di Galaxy Waterpark","width":1600,"height":1200,"aspect_ratio":"4 / 3"},
+  {"id":"water-arch-1","image_url":"/images/figma/gallery/water-arch.webp","alt":"Lengkungan air warna-warni di kolam bermain","width":1600,"height":1600,"aspect_ratio":"1 / 1"},
+  {"id":"children-pool","image_url":"/images/figma/gallery/children-pool.webp","alt":"Anak-anak bermain di kolam dangkal dan perosotan","width":1600,"height":1200,"aspect_ratio":"4 / 3"},
+  {"id":"family-1","image_url":"/images/figma/gallery/family.webp","alt":"Wahana keluarga dengan perosotan hijau dan ember tumpah","width":1600,"height":1600,"aspect_ratio":"1 / 1"},
+  {"id":"lazy-river-2","image_url":"/images/figma/gallery/lazy-river.webp","alt":"Kolam arus dengan pelampung dan taman yang rindang","width":1600,"height":1200,"aspect_ratio":"4 / 3"},
+  {"id":"water-arch-2","image_url":"/images/figma/gallery/water-arch.webp","alt":"Area bermain air dengan pancuran warna-warni","width":1600,"height":1600,"aspect_ratio":"1 / 1"},
+  {"id":"family-2","image_url":"/images/figma/gallery/family.webp","alt":"Area wahana dan kolam untuk liburan keluarga","width":1600,"height":1600,"aspect_ratio":"1 / 1"}
+]

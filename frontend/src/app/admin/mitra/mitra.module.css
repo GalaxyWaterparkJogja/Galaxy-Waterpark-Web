@@ -1,0 +1,209 @@
+.logoCircle {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  background-color: var(--color-image-empty-background, #e2e8f0);
+  box-shadow: 0 2px 6px rgb(15 23 42 / 10%);
+}
+
+.logoImage {
+  object-fit: cover;
+}
+
+.tableActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.iconBtn {
+  background: #ffffff;
+  border: 1px solid #023047;
+  border-radius: 6px;
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #023047;
+  transition: background-color 0.15s;
+}
+
+.iconBtn:hover:not(:disabled) {
+  background-color: #f1f5f9;
+}
+
+.iconBtnDanger {
+  background-color: #d00416;
+  color: #ffffff;
+  border-color: #d00416;
+}
+
+.iconBtnDanger:hover:not(:disabled) {
+  background-color: #b00313;
+}
+
+.iconBtn:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
+.badgeInactive {
+  display: inline-block;
+  background-color: #f1f5f9;
+  color: #64748b;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 9999px;
+}
+
+/* Bottom Card: Mitra Kami */
+.bottomCard {
+  background-color: #ffffff;
+  border: 1.5px solid #023047;
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 24px;
+  box-shadow: 0 4px 12px rgba(2, 48, 71, 0.1);
+}
+
+.bottomCardTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #090d12;
+  margin: 0 0 16px 0;
+}
+
+.textBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border: 1px solid #023047;
+  border-radius: 8px;
+  padding: 12px 16px;
+  background-color: #ffffff;
+}
+
+.textValue {
+  font-size: 0.875rem;
+  color: #334155;
+  margin: 0;
+  flex: 1;
+}
+
+/* Modal Form Elements */
+.modalForm {
+  position: relative;
+}
+
+.modalFieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fieldLabel {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #023047;
+}
+
+.formInput {
+  width: 100%;
+  border: 1px solid #94a3b8;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.875rem;
+  color: #090d12;
+  outline: none;
+  background: #ffffff;
+}
+
+.formInput:focus {
+  border-color: #023047;
+  box-shadow: 0 0 0 2px rgb(2 48 71 / 12%);
+}
+
+.logoEditorBox {
+  height: 220px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #cbd5e1;
+}
+
+.uploadHelper {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin: 4px 0 0;
+  line-height: 1.4;
+}
+
+.checkboxLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #023047;
+  cursor: pointer;
+}
+
+.errorMessage {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 0.875rem;
+}
+
+.errorMessage button {
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.toast {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 50;
+  padding: 12px 20px;
+  border-radius: 10px;
+  background: #023047;
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 500;
+  box-shadow: 0 10px 25px rgb(2 48 71 / 25%);
+}
+
+.emptyCell {
+  text-align: center;
+  padding: 36px 16px;
+  color: #64748b;
+}

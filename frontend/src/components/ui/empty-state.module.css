@@ -1,0 +1,110 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 56px 24px;
+  margin: 32px auto;
+  max-width: 520px;
+  background: var(--color-surface-page);
+  border: 1px dashed var(--color-surface-muted);
+  border-radius: var(--radius-card);
+  box-shadow: 0 2px 8px rgb(2 48 71 / 4%);
+}
+
+.iconWrapper {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-round);
+  background: var(--color-surface-water);
+  color: var(--color-border-brand);
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: var(--type-body-size, 16px);
+  line-height: var(--type-body-leading, 24px);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 6px;
+}
+
+.description {
+  font-size: var(--type-label-size, 14px);
+  line-height: var(--type-label-leading, 20px);
+  color: var(--color-text-secondary);
+  max-width: 360px;
+  margin-bottom: 24px;
+}
+
+.actionGroup {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.actionButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 24px;
+  font-size: var(--type-label-size, 14px);
+  line-height: var(--type-label-leading, 20px);
+  font-weight: 600;
+  color: #ffffff;
+  background: var(--color-action-primary);
+  border: 0;
+  border-radius: var(--radius-control);
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgb(251 133 0 / 25%);
+  transition: transform 150ms ease, box-shadow 150ms ease, opacity 150ms ease;
+  touch-action: manipulation;
+}
+
+.actionButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgb(251 133 0 / 35%);
+}
+
+.actionButton:active {
+  transform: translateY(0);
+  opacity: 0.9;
+}
+
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 20px;
+  font-size: var(--type-label-size, 14px);
+  line-height: var(--type-label-leading, 20px);
+  font-weight: 600;
+  color: var(--color-text-brand);
+  background: transparent;
+  border: 1px solid var(--color-border-brand);
+  border-radius: var(--radius-control);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 150ms ease, color 150ms ease;
+  touch-action: manipulation;
+}
+
+.secondaryButton:hover {
+  background: var(--color-surface-water);
+}
+
+@media (min-width: 600px) {
+  .title {
+    font-size: var(--type-section-size, 20px);
+    line-height: var(--type-section-leading, 28px);
+  }
+}

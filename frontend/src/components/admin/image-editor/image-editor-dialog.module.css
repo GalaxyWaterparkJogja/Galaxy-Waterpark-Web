@@ -1,0 +1,321 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgb(2 22 34 / 56%);
+}
+
+.dialog {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 640px;
+  max-height: calc(100dvh - 32px);
+  padding: 20px 24px;
+  overflow-y: auto;
+  border-radius: 16px;
+  background: #fff;
+  color: #090d12;
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 25%);
+}
+
+.dialog:focus {
+  outline: none;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.title {
+  margin: 0;
+  color: #023047;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.subtitle {
+  margin: 4px 0 0;
+  color: #475569;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+
+.closeButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  color: #023047;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.closeButton:hover:not(:disabled) {
+  background: #f1f5f9;
+}
+
+.placeholder {
+  display: flex;
+  min-height: 220px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #475569;
+  font-size: 0.875rem;
+}
+
+.stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Frame width follows the card's aspect ratio and fits comfortably with controls on 720p screens. */
+.frame {
+  position: relative;
+  width: min(100%, calc(min(42dvh, 380px) * var(--frame-ratio)));
+  aspect-ratio: var(--frame-ratio);
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--color-image-empty-background, #e2e8f0);
+  box-shadow:
+    0 0 0 1px #cbd5e1,
+    0 4px 12px rgb(30 41 59 / 15%);
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+
+.frame:active {
+  cursor: grabbing;
+}
+
+.frame:focus-visible {
+  outline: 3px solid #219ebc;
+  outline-offset: 3px;
+}
+
+.canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Logos are shown in a circle on the site: dim what the mask will hide. */
+.circleGuide {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  box-shadow: 0 0 0 9999px rgb(2 22 34 / 38%);
+  outline: 2px solid rgb(255 255 255 / 85%);
+  outline-offset: -2px;
+  pointer-events: none;
+}
+
+.help {
+  max-width: 460px;
+  margin: 0;
+  color: #475569;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sliderLabel {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+}
+
+.slider {
+  width: 100%;
+  accent-color: #023047;
+  cursor: pointer;
+}
+
+.iconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border: 1px solid #94a3b8;
+  border-radius: 8px;
+  background: #fff;
+  color: #023047;
+  font-size: 1.375rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.iconButton:hover:not(:disabled) {
+  background: #f8fafc;
+}
+
+.zoomValue {
+  min-width: 3.5ch;
+  color: #475569;
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.textButton {
+  min-height: 36px;
+  padding: 0 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #fff;
+  color: #023047;
+  font: inherit;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.textButton:hover:not(:disabled) {
+  background: #f8fafc;
+}
+
+.meta {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.75rem;
+}
+
+.error {
+  margin: 0;
+  padding: 10px 14px;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 0.8125rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.cancelButton,
+.confirmButton {
+  display: inline-flex;
+  min-width: 120px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 20px;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cancelButton {
+  border: 1px solid #94a3b8;
+  background: #fff;
+  color: #023047;
+}
+
+.confirmButton {
+  border: 0;
+  background: #fb8500;
+  color: #fff;
+}
+
+.confirmButton:hover:not(:disabled) {
+  background: #ea7a00;
+}
+
+.closeButton:disabled,
+.iconButton:disabled,
+.textButton:disabled,
+.cancelButton:disabled,
+.confirmButton:disabled,
+.slider:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.processing {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 24px;
+  border-radius: 16px;
+  background: rgb(255 255 255 / 88%);
+  color: #023047;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: progress;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .dialog {
+    padding: 18px 16px;
+  }
+
+  .footer {
+    flex-direction: column-reverse;
+  }
+
+  .cancelButton,
+  .confirmButton {
+    width: 100%;
+  }
+}

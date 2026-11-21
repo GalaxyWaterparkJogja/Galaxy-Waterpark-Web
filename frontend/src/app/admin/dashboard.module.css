@@ -1,0 +1,22 @@
+.dashboardCenter {
+  min-height: calc(100vh - 90px - 64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcomeTitle {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: #090d12;
+  text-align: center;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 768px) {
+  .welcomeTitle {
+    font-size: 2rem;
+  }
+}

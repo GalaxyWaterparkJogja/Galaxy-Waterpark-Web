@@ -1,0 +1,196 @@
+@reference "../../../../../styles/breakpoints.css";
+
+.section {
+  scroll-margin-top: var(--header-height, 64px);
+  margin-top: 49px;
+  padding-bottom: 24px;
+}
+.panel,
+.frame {
+  margin-top: 16px;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+.map {
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+}
+.map iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.mapLink {
+  position: absolute;
+  bottom: 22px;
+  left: 60px;
+  max-width: calc(100% - 72px);
+  min-height: 44px;
+  overflow-wrap: anywhere;
+  border-radius: var(--radius-control);
+  background: var(--color-surface-page);
+  padding: 6px 10px;
+  font-size: 12px;
+  line-height: 18px;
+  box-shadow: var(--shadow-card);
+}
+.features {
+  min-height: 0;
+  margin-top: 0;
+  position: relative;
+  padding: 24px 20px;
+  row-gap: 20px;
+  background: var(--color-surface-page);
+  border-radius: 0 0 var(--radius-card) var(--radius-card);
+}
+.feature {
+  gap: 16px;
+}
+.icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: #023047;
+}
+.feature h3 {
+  font-size: var(--type-label-size);
+  line-height: 20px;
+  font-weight: 700;
+  color: var(--color-text-strong);
+}
+.feature p {
+  margin-top: 4px;
+  font-size: 13px;
+  line-height: 18px;
+  color: #1e293b;
+}
+@variant desktop {
+  .section {
+    margin-top: var(--landing-section-space);
+    padding-bottom: 36px;
+  }
+  .panel,
+  .frame {
+    margin-top: 40px;
+    width: calc(100% + 1px);
+    border-radius: var(--radius-control-large);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+  }
+  .map {
+    height: 460px;
+  }
+  .mapLink {
+    bottom: 22px;
+    left: 68px;
+    max-width: calc(100% - 136px);
+  }
+  .features {
+    min-height: 116px;
+    margin-top: 0;
+    padding: 30px 84px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 80px;
+    border-radius: 0 0 var(--radius-control-large) var(--radius-control-large);
+  }
+  .feature {
+    gap: 24px;
+  }
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
+  .feature h3 {
+    font-size: var(--type-body-size);
+    line-height: var(--type-body-leading);
+    letter-spacing: 0;
+    color: #023047;
+    overflow-wrap: anywhere;
+  }
+  .feature p {
+    margin-top: 0;
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: 0.13px;
+    color: #3e484d;
+    overflow-wrap: anywhere;
+  }
+}
+@variant desktop {
+  @media (max-width: 1439px) {
+    .features {
+      padding-inline: 24px;
+      column-gap: 24px;
+    }
+    .feature {
+      gap: 12px;
+    }
+    .feature h3,
+    .feature p {
+      white-space: normal;
+    }
+  }
+}
+
+@variant tablet {
+  .section {
+    margin-top: var(--landing-section-space);
+    padding-bottom: 28px;
+  }
+  .panel,
+  .frame {
+    margin-top: 24px;
+    width: 100%;
+    border-radius: var(--radius-control-large);
+  }
+  .map {
+    height: 380px;
+  }
+  .mapLink {
+    bottom: 22px;
+    left: 68px;
+    max-width: calc(100% - 136px);
+  }
+  .features {
+    grid-template-columns: minmax(0, 1fr);
+    margin: 0;
+    min-height: 0;
+    padding: 24px;
+    gap: 24px;
+  }
+  .feature {
+    gap: 16px;
+  }
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
+  .feature h3 {
+    font-size: var(--type-body-size);
+    line-height: var(--type-body-leading);
+    white-space: normal;
+  }
+  .feature p {
+    margin-top: 4px;
+    font-size: var(--type-label-size);
+    line-height: var(--type-label-leading);
+    white-space: normal;
+  }
+  @media (min-width: 900px) {
+    .features {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .feature {
+      align-items: start;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .map {
+    height: 460px;
+  }
+}

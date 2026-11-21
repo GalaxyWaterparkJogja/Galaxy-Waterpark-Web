@@ -1,0 +1,66 @@
+@reference "../../../../styles/breakpoints.css";
+
+.track {
+  --carousel-initial-index: 0;
+  position: relative;
+  overflow-x: auto;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--landing-gutter, 16px);
+  padding-block: 12px 28px;
+  margin-block: -12px -16px;
+}
+.track::-webkit-scrollbar {
+  display: none;
+}
+.track[data-single] {
+  --carousel-initial-index: 0;
+}
+.slide {
+  min-width: 0;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+.endSlide {
+  display: flex;
+}
+.moreLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 100%;
+  min-height: 44px;
+  padding: 12px;
+  text-align: center;
+  font-size: calc(var(--type-label-size) - 2px);
+  line-height: calc(var(--type-label-leading) - 4px);
+  font-weight: 700;
+  letter-spacing: -0.16px;
+  color: var(--color-text-muted);
+}
+@variant desktop {
+  .endSlide {
+    display: none;
+  }
+  .track {
+    --carousel-initial-index: 0;
+  }
+  .slide {
+    scroll-snap-align: start;
+  }
+}
+
+@variant tablet {
+  .endSlide {
+    display: none;
+  }
+  .track {
+    --carousel-initial-index: 0;
+  }
+  .slide {
+    scroll-snap-align: start;
+  }
+}

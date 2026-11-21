@@ -1,0 +1,169 @@
+@reference "../../../../../styles/breakpoints.css";
+
+.section {
+  scroll-margin-top: var(--header-height, 64px);
+  isolation: isolate;
+  display: grid;
+  grid-template-areas: "heading" "visual" "copy";
+  grid-template-rows: auto auto auto;
+  gap: 16px;
+  margin-top: 36px;
+  min-height: 0;
+  padding-bottom: 24px;
+}
+.section::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -194px 0 0;
+  background: linear-gradient(
+    180deg,
+    var(--color-surface-water) 6.373%,
+    var(--color-surface-warm) 34.053%
+  );
+}
+.heading {
+  grid-area: heading;
+  padding-inline: var(--landing-gutter);
+}
+.visual {
+  grid-area: visual;
+  margin-top: 0;
+  width: var(--landing-content-width);
+  max-width: var(--landing-content-max);
+  margin-inline: auto;
+  align-self: start;
+}
+.photo {
+  aspect-ratio: 414 / 285;
+  border-radius: var(--radius-card);
+}
+.photo img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 145.39%;
+  width: 100%;
+  max-width: none;
+  object-fit: fill;
+}
+.backdrop {
+  inset: 0;
+  opacity: 0.5;
+  border-radius: var(--radius-card);
+  box-shadow: inset 0 15.523px 23.284px rgb(30 41 59 / 25%);
+}
+.backdrop img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 144.56%;
+  width: 100.49%;
+  max-width: none;
+}
+.copy {
+  grid-area: copy;
+  padding: 0 var(--landing-gutter);
+  font-size: var(--type-label-size);
+  line-height: 22px;
+  letter-spacing: 0;
+  color: var(--color-text-brand);
+  text-align: left;
+}
+@variant desktop {
+  .section {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 44px auto;
+    grid-template-areas: "visual heading" "visual copy";
+    align-content: start;
+    margin-top: 10px;
+    padding-top: 302px;
+    padding-bottom: 0;
+    min-height: 735px;
+  }
+  .section::before {
+    inset: 0;
+  }
+  .heading {
+    padding: 0 24px 0 16px;
+  }
+  .visual {
+    position: absolute;
+    top: -177.63px;
+    left: max(0px, calc((100cqw - 1440px) / 2));
+    margin: 0 0 0 clamp(-93.17px, -6.47cqw, 0px);
+    width: min(55.637cqw, 801.173px);
+  }
+  .photo {
+    aspect-ratio: 801.173 / 552.265;
+    border-radius: var(--radius-card);
+  }
+  .backdrop {
+    inset: 1.63px -6.827px 0 -6.83px;
+    border-radius: var(--radius-card);
+  }
+  .copy {
+    padding: 8px var(--landing-gutter) 0 12px;
+    min-height: 200px;
+    max-width: 719px;
+    text-align: left;
+    font-size: var(--type-label-size);
+    line-height: 22px;
+    letter-spacing: 0;
+  }
+  .copy p {
+    display: block;
+  }
+  .copy p + p {
+    margin-top: 12px;
+  }
+}
+
+@variant tablet {
+  .section {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "heading" "visual" "copy";
+    gap: 24px;
+    /* VF-02: Ensure tablet margin aligns with landing section space */
+    margin-top: var(--landing-section-space);
+    padding: 40px var(--landing-gutter);
+    min-height: 0;
+  }
+  .section::before {
+    inset: 0;
+  }
+  .heading {
+    padding: 0;
+  }
+  .visual {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: 0;
+    width: 100%;
+  }
+  .photo {
+    aspect-ratio: 414 / 285;
+    border-radius: var(--radius-card);
+  }
+  .backdrop {
+    inset: 0;
+    border-radius: var(--radius-card);
+  }
+  .copy {
+    padding: 0;
+    min-height: 0;
+    max-width: none;
+    text-align: left;
+    font-size: var(--type-label-size);
+    line-height: 22px;
+    letter-spacing: 0;
+  }
+  .copy p {
+    display: block;
+  }
+  .copy p + p {
+    margin-top: 12px;
+  }
+}

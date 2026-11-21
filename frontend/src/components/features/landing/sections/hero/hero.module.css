@@ -1,0 +1,106 @@
+@reference "../../../../../styles/breakpoints.css";
+
+.hero {
+  --hero-height: 696px;
+  --hero-title-color: var(--color-surface-page);
+  --hero-action-color: var(--color-action-primary);
+  --hero-outline-color: var(--color-surface-warm);
+  margin-top: calc(-1 * var(--header-height, 64px));
+  min-height: clamp(560px, 85vh, 696px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: calc(var(--header-height, 64px) + 24px) 24px 48px;
+  background: #0b2533;
+  box-shadow:
+    0 4px 12px -2px rgb(2 48 71 / 15%),
+    0 1px 3px rgb(2 48 71 / 15%);
+}
+
+.image {
+  object-fit: cover;
+  object-position: 41.33% center;
+}
+
+.overlay {
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgb(9 13 18 / 45%);
+}
+
+.content {
+  max-width: 364px;
+  color: var(--hero-title-color);
+  overflow-wrap: anywhere;
+}
+
+.primaryAction {
+  background: var(--hero-action-color);
+  color: var(--hero-title-color);
+  box-shadow:
+    0 4px 12px rgb(61 20 2 / 15%),
+    0 1px 3px rgb(61 20 2 / 15%);
+}
+
+.secondaryAction {
+  border: 1px solid var(--hero-title-color);
+  color: var(--hero-outline-color);
+  box-shadow: 0 4px 12px rgb(0 0 0 / 30%);
+}
+
+@variant desktop {
+  .hero {
+    --hero-height: clamp(828px, 71.111vw, 1024px);
+    --hero-title-top: clamp(300px, 25.139vw, 362px);
+    padding-inline: var(--gutter);
+  }
+
+  .image {
+    object-position: 53% center;
+  }
+
+  .content {
+    max-width: 902px;
+  }
+
+  .secondaryAction {
+    border-color: var(--hero-outline-color);
+  }
+}
+
+@variant tablet {
+  .hero {
+    min-height: calc(clamp(480px, 55vw, 640px) + var(--header-height, 64px));
+    justify-content: center;
+    padding: calc(80px + var(--header-height, 64px)) var(--landing-gutter) 80px;
+  }
+  .content {
+    max-width: 720px;
+  }
+  .content h1 {
+    font-size: clamp(40px, 4.5vw, 52px);
+    line-height: 1.125;
+    letter-spacing: var(--type-section-desktop-tracking);
+  }
+  .primaryAction,
+  .secondaryAction {
+    width: 240px;
+    min-height: 48px;
+    padding: 8px 16px;
+    font-size: var(--type-section-size);
+    line-height: var(--type-section-leading);
+    border-radius: var(--radius-control-large);
+    font-weight: 600;
+  }
+  .secondaryAction > span {
+    width: 24px;
+    height: 24px;
+  }
+  .secondaryAction img {
+    width: 20px;
+    height: auto;
+  }
+}

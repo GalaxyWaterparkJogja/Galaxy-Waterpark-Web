@@ -1,0 +1,140 @@
+.tableCard {
+  background-color: #ffffff;
+  border: 1.5px solid #023047;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(2, 48, 71, 0.12);
+}
+
+.tableToolbar {
+  padding: 14px 20px;
+  display: flex;
+  justify-content: flex-end;
+  background-color: #023047;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.tabPillBar {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tabPill {
+  background-color: rgba(255, 255, 255, 0.88);
+  border: 1px solid transparent;
+  color: #023047;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 6px 18px;
+  min-width: 112px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.15s, border-color 0.15s, box-shadow 0.15s;
+}
+
+.tabPill:hover {
+  background-color: #ffffff;
+}
+
+.tabPillActive {
+  background-color: #ffffff;
+  color: #023047;
+  font-weight: 700;
+  border-color: #8ecae6;
+  box-shadow: 0 0 0 2px rgba(142, 202, 230, 0.45);
+}
+
+.starRating {
+  display: flex;
+  gap: 2px;
+  color: #f59e0b;
+}
+
+.moderationActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btnTolak {
+  background-color: #ef4444;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 14px;
+  min-width: 72px;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.12);
+  transition: background-color 0.15s;
+}
+
+.btnTolak:hover {
+  background-color: #dc2626;
+}
+
+.btnPublikasi {
+  background-color: #22c55e;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 14px;
+  min-width: 82px;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.12);
+  transition: background-color 0.15s;
+}
+
+.btnPublikasi:hover {
+  background-color: #16a34a;
+}
+
+.btnTolak:disabled,
+.btnPublikasi:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.tableMessage {
+  text-align: center;
+  padding: 40px 0;
+  color: #64748b;
+}
+
+.errorMessage {
+  margin: 0 0 16px;
+  padding: 12px 16px;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  background-color: #fef2f2;
+  color: #b91c1c;
+}
+
+.errorMessage button {
+  margin-left: 12px;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.rejectedBadge {
+  display: inline-block;
+  min-width: 88px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: #fee2e2;
+  color: #b91c1c;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
